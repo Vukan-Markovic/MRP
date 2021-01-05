@@ -1,0 +1,12 @@
+package com.ausp.mrp;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class AuspMrpBackendApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(AuspMrpBackendApplication.class, args);
+	}
+}
