@@ -1,0 +1,5 @@
+package com.ausp.mrp.reps;
+
+public class UserRepository {
+
+}

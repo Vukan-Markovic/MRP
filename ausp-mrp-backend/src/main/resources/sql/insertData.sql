@@ -1,0 +1,1 @@
+insert into User values ('Vukan', '1234567');

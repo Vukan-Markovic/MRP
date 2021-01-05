@@ -1,0 +1,5 @@
+package com.ausp.mrp.jpa;
+
+public class User {
+
+}
