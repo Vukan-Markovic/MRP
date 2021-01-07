@@ -1,4 +1,8 @@
+export type Role = 'admin' | 'manager' | 'user';
+
 export class User {
-  username: string;
-  password: string;
+  displayName: string;
+  email: string;
+  role: Role;
+  uid: string;
 }
