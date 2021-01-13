@@ -4,38 +4,37 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserComponent } from './components/user/user.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
-import { AuthTokenHttpInterceptorProvider } from './http-interceptors/auth-token.interceptor';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
-import { environment } from 'src/environments/environment.prod';
-import { UserFormComponent } from './components/user-form/user-form.component';
-import { CommonModule } from '@angular/common';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { AuthService } from './services/auth.service';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
-    UserFormComponent
+    DashboardComponent,
+    SignInComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    NgbModule,
-    CommonModule,
+    AngularFirestoreModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
   ],
-  entryComponents: [
-    SignInComponent,
-    UserFormComponent
-  ],
-  providers: [AuthTokenHttpInterceptorProvider],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
