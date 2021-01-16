@@ -14,8 +14,12 @@ import lombok.ToString;
 public class ProductOperationalProductionPlan {
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int productKey;
-	private int idOperationalProductionPlan;
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private Long productKey;
+
+	
+	public ProductOperationalProductionPlan () {
+	}
 
 }

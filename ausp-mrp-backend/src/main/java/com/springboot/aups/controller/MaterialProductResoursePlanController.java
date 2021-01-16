@@ -8,26 +8,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springboot.aups.models.PartOfProduct;
-import com.springboot.aups.services.PartOfProductService;
+import com.springboot.aups.models.MaterialProductResoursePlan;
+import com.springboot.aups.models.OperationalProductionPlan;
+import com.springboot.aups.services.MaterialProductResourcePlanService;
 
 @RestController
-@RequestMapping(value = "/partOfProduct")
-public class PartOfProductController {
+@RequestMapping(value = "/materialProductResoursePlan")
+public class MaterialProductResoursePlanController {
+	
 	@Autowired
-	private PartOfProductService pps;
+	private MaterialProductResourcePlanService service;
 	
 	@RequestMapping(value = "",method = RequestMethod.GET,produces = "application/json")
     public ResponseEntity<?> getAll() {
-        return new ResponseEntity<>(pps.getAllParts(), HttpStatus.OK);
+        return new ResponseEntity<>(service.getAllData(), HttpStatus.OK);
     }
 	
 	@RequestMapping(value = "", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
-    public PartOfProduct newPartOfProduct(@RequestBody PartOfProduct request) {
-        return pps.addNew(request);
+    public MaterialProductResoursePlan newMatPlan(@RequestBody MaterialProductResoursePlan request) {
+        return service.add(request);
     }
-	@RequestMapping(value = "", method = RequestMethod.PUT, consumes = "application/json", produces = "application/json")
-    public PartOfProduct updatePartOfProduct(@RequestBody PartOfProduct request) {
-        return pps.addNew(request);
-    }
+
 }
