@@ -10,7 +10,6 @@ import lombok.ToString;
 public class Material {
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_material")
 	private int id;
 	@Column(name = "name_material")
