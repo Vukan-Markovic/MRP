@@ -10,7 +10,6 @@ import com.springboot.aups.dto.PartOfProductDTO;
 import com.springboot.aups.models.Material;
 import com.springboot.aups.models.PartOfProduct;
 import com.springboot.aups.models.Product;
-import com.springboot.aups.models.WarehouseProduct;
 import com.springboot.aups.repository.PartOfProductRepository;
 
 @Service
@@ -51,7 +50,5 @@ public class PartOfProductService {
 	public PartOfProduct addNew(PartOfProduct p) {
 		return ppr.save(p);
 	}
-	
-	
 	
 }

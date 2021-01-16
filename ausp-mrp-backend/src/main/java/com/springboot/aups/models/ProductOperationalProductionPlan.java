@@ -15,7 +15,13 @@ public class ProductOperationalProductionPlan {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int productKey;
-	private int idOperationalProductionPlan;
+	private Long id;
+	private Long productKey;
+
+	
+	public ProductOperationalProductionPlan (Long id, Long productKey) {
+		this.id=id;
+		this.productKey = productKey;		
+	}
 
 }
