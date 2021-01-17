@@ -14,8 +14,7 @@ import lombok.ToString;
 public class ProductResourcePlan {
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idProductResourcePlan;
+	private Long idProductResourcePlan;
 	private int neededQuantityOfMaterial;
 	private String orderDate;
 	private Long idEmployee;

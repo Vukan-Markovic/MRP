@@ -1,17 +1,11 @@
 package com.springboot.aups.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.springboot.aups.dto.ProductDTO;
 import com.springboot.aups.models.Material;
-import com.springboot.aups.models.PartOfProduct;
-import com.springboot.aups.models.Product;
-import com.springboot.aups.models.Warehouse;
-import com.springboot.aups.models.WarehouseProduct;
 import com.springboot.aups.repository.MaterialRepository;
 
 @Service
