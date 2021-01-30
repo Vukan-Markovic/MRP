@@ -1,0 +1,73 @@
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0">
+    <img class="brand-logo" src="assets/logo-positronx-white.svg" alt="positronX.io Logo">
+  </a>
+  <ul class="nav nav-tabs">
+    <li>
+      <a class="nav-link active">
+        <a href="/dashboard">Go to dashboard
+        </a>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+<mat-toolbar color="primary">
+  <span class="title-center">Warehouses</span>
+</mat-toolbar>
+
+
+ <div class="container mat-elevation-z8">
+   <!---
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+    -->
+    <mat-form-field>Filter:
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="">
+    </mat-form-field>
+
+  <mat-table #table [dataSource]="dataSource" class="mat-cell" matSort>
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+    <!-- ID Column -->
+
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header>Id</mat-header-cell>
+      <mat-cell *matCellDef="let row" >{{row.id}}</mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header>Name</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.name}}</mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="location">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header>Location</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.location}}</mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="contact">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header>Contact</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.contact}}</mat-cell>
+    </ng-container>
+
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <mat-row style="cursor: default" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+  </mat-table>
+
+  <mat-paginator [pageSize] = "5"
+  [pageSizeOptions] = "[5, 10, 20]"
+  [showFirstLastButtons] = "true">
+  </mat-paginator>
+
+ </div>

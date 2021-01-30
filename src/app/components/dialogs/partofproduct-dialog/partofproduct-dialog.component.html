@@ -1,0 +1,70 @@
+<div class="container">
+  <h3 mat-dialog-title *ngIf="flag == 1">Adding part of product</h3>
+  <h3 mat-dialog-title *ngIf="flag == 2">Updating part of product: {{data.id}}</h3>
+  <!--<h3 mat-dialog-title *ngIf="flag == 3">Brisanje člana: {{data.id}}</h3>-->
+  <form class="mat-dialog-content" #formControl="ngForm">
+
+    <div class="form">
+      <mat-form-field >
+        <input matInput [(ngModel)]="data.productKey" name="productKey">
+        <mat-placeholder class="placeholder">Product key</mat-placeholder>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field >
+        <input matInput [(ngModel)]="data.nameProduct" name="nameProduct">
+        <mat-placeholder class="placeholder">Name product</mat-placeholder>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field>
+        <input matInput [(ngModel)]="data.id" name="id" required>
+        <mat-placeholder class="placeholder">Id</mat-placeholder>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field>
+        <input matInput [(ngModel)]="data.namePartOfProduct"
+        name="namePartOfProduct" required>
+        <mat-placeholder class="placeholder">Name part of product</mat-placeholder>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field >
+        <input matInput [(ngModel)]="data.dimensionsPartOfProduct"
+        name="dimensionsPartOfProduct" required>
+        <mat-placeholder class="placeholder">Dimensions part of product</mat-placeholder>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field >
+        <input matInput [(ngModel)]="data.idMaterial"
+        name="idMaterial">
+        <mat-placeholder class="placeholder">Id material</mat-placeholder>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field >
+        <input matInput [(ngModel)]="data.nameMaterial"
+        name="nameMaterial">
+        <mat-placeholder class="placeholder">Name material</mat-placeholder>
+      </mat-form-field>
+    </div>
+
+
+    <div mat-dialog-actions>
+      <button mat-button *ngIf="flag == 1" type="submit" [mat-dialog-close]="1"
+        (click)="add()" [disabled]="!formControl.valid">Save</button>
+      <button mat-button *ngIf="flag == 2" type="submit" [mat-dialog-close]="1"
+        (click)="update()" [disabled]="!formControl.valid">Save</button>
+      <button mat-button (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+</div>
+

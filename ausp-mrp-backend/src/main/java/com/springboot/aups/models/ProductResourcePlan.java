@@ -14,9 +14,10 @@ import lombok.ToString;
 public class ProductResourcePlan {
 	
 	@Id
-	private Long idProductResourcePlan;
+	private Long id; //id_product_resource_plan
 	private int neededQuantityOfMaterial;
-	private String orderDate;
-	private Long idEmployee;
+	//private String orderDate;
+	//private Long idEmployee;
+	private int idMaterial;
 
 }

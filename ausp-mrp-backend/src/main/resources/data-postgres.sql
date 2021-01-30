@@ -28,3 +28,7 @@ insert into operational_production_plan(id, needed_quantity_of_product) values (
 
 insert into product_operational_production_plan(product_key, id) values (3, 1);
 insert into product_operational_production_plan(product_key, id) values (2, 2);
+
+insert into product_resource_plan(id, needed_quantity_of_material, id_material) values (1, 12, 2);
+
+insert into material_product_resourse_plan(id, id_material) values (1, 2);
