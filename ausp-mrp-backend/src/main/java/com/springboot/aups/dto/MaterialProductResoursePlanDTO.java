@@ -1,5 +1,10 @@
 package com.springboot.aups.dto;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
+
+@JsonAutoDetect(fieldVisibility = Visibility.ANY)
+
 public class MaterialProductResoursePlanDTO {
 	
 		// klasa za  cuvanje porudzbine materijala kupca

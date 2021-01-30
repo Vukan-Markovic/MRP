@@ -1,0 +1,46 @@
+<div class="container">
+  <h3 mat-dialog-title *ngIf="flag == 1">Adding material</h3>
+  <h3 mat-dialog-title *ngIf="flag == 2">Updating material: {{data.id}}</h3>
+  <!--<h3 mat-dialog-title *ngIf="flag == 3">Brisanje člana: {{data.id}}</h3>-->
+  <form class="mat-dialog-content" #formControl="ngForm">
+
+    <div class="form">
+      <mat-form-field>
+        <input matInput [(ngModel)]="data.id" name="id" required>
+        <mat-placeholder class="placeholder">Id</mat-placeholder>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field>
+        <input matInput [(ngModel)]="data.nameMaterial" name="nameMaterial" required>
+        <mat-placeholder class="placeholder">Name</mat-placeholder>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field >
+        <input matInput [(ngModel)]="data.priceMaterial"
+        name="priceMaterial" required>
+        <mat-placeholder class="placeholder">Price</mat-placeholder>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field >
+        <input matInput [(ngModel)]="data.dimensionsMaterial"
+        name="dimensionsMaterial">
+        <mat-placeholder class="placeholder">Dimensions</mat-placeholder>
+      </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+      <button mat-button *ngIf="flag == 1" type="submit" [mat-dialog-close]="1"
+        (click)="add()" [disabled]="!formControl.valid">Save</button>
+      <button mat-button *ngIf="flag == 2" type="submit" [mat-dialog-close]="1"
+        (click)="update()" [disabled]="!formControl.valid">Save</button>
+      <button mat-button (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+</div>
+

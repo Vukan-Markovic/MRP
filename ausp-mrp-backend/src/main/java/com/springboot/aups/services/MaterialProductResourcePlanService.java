@@ -40,9 +40,9 @@ public class MaterialProductResourcePlanService {
 		
 		for (MaterialProductResoursePlan matplan :  matplanrep.findAll()) {
 			for (ProductResourcePlan plan : planrep.findAll()) {
-				if(plan.getIdProductResourcePlan()==matplan.getId()) {
+				if(plan.getId()==matplan.getId()) {
 					MaterialProductResoursePlanDTO newM = new MaterialProductResoursePlanDTO
-							(plan.getIdProductResourcePlan(), matplan.getId_material(),plan.getNeededQuantityOfMaterial());
+							(plan.getId(), matplan.getId_material(),plan.getNeededQuantityOfMaterial());
 					retList.add(newM);
 				}
 			}
