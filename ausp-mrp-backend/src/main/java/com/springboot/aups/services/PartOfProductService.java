@@ -30,7 +30,7 @@ public class PartOfProductService {
 				List<PartOfProduct> parts = ppr.findAll();
 				for (PartOfProduct partsofproducts : parts) {
 					for (Product products : product) {
-						if (products.getProductKey()==partsofproducts.getId()) {
+						if (products.getProductKey()==partsofproducts.getProductKey()) {
 							String name="";
 							for (Material mat : materials) {
 								if (mat.getId() == partsofproducts.getIdMaterial())
