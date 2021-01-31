@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.aups.models.Material;
+import com.springboot.aups.repository.MaterialRepository;
 import com.springboot.aups.services.MaterialService;
 
 @RestController
@@ -17,6 +18,7 @@ public class MaterialController {
 	
 	@Autowired
 	private MaterialService ms;
+	private MaterialRepository mr;
 	
 	/*@GetMapping("")
 	public String welcome() {
@@ -32,14 +34,17 @@ public class MaterialController {
     public Material newMaterial(@RequestBody Material request) {
         return ms.addNew(request);
     }
+	
 	@RequestMapping(value = "", method = RequestMethod.PUT, consumes = "application/json", produces = "application/json")
     public Material updateMaterial(@RequestBody Material request) {
         return ms.addNew(request);
     }
+	
+	@RequestMapping(value = "", method = RequestMethod.DELETE, consumes = "application/json", produces = "application/json")
+    public void deleteMaterial(@RequestBody Material request) {
+        ms.deleteMaterial(request);
+    }
 
-	/*@RequestMapping(value = "name_material",method = RequestMethod.GET,produces = "application/json")
-    public ResponseEntity<?> getCart(@RequestParam("name_material") String user) {
-        return new ResponseEntity<>(ms.nadjiPoImenu(user), HttpStatus.OK);
-    }*/
+	
 
 }

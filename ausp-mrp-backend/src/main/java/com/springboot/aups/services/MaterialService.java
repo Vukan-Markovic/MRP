@@ -26,6 +26,10 @@ public class MaterialService {
 		return mr.save(m);
 	}
 	
+	public void deleteMaterial(Material m) {
+		mr.delete(m);
+	}
+	
 	public List<Material> getAllMaterials() {
 		List<Material> ret = mr.findAll();
 		
