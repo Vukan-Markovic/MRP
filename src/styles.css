@@ -277,6 +277,8 @@ input:-moz-placeholder {
 }
 
 .nav-link {
+  margin-right: 0.5rem;
+  margin-top: 0.2rem;
   padding: 1.5rem 1rem;
   border-bottom: 1px solid #dde0e2;
   cursor: pointer;
@@ -415,7 +417,7 @@ body .navbar-brand {
 }
 
 .brand-logo {
-  max-width: 85%;
+  max-width: 35%;
 }
 
 .pt-3,
